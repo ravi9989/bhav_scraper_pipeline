@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+        python: 3.7
+  build:
+    commands:
+      - aws cloudformation package --template-file template.yaml --s3-bucket codepipeline-ap-south-1-salasa --output-template-file outputtemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - template.yaml
+    - outputtemplate.yaml
