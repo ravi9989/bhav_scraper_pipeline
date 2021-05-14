@@ -20,8 +20,15 @@ HEADERS = {
 
 REQ_TAG = "ContentPlaceHolder1_btnhylZip"
 
-REDIS_URL = "xx"
+REDIS_URL = "rediss://default:rt04ubo8a2pvfcc7@bhav-data-do-user-9172163-0.b.db.ondigitalocean.com:25061"
 
+# def connect(redis_host_endpoint):
+#     startup_nodes = [{ "host": redis_host_endpoint, "port": "6379" }]
+#     redis_pool = rediscluster.ClusterConnectionPool(max_connections=3, startup_nodes=startup_nodes, skip_full_coverage_check=True, decode_responses=True)
+#     return redis_pool
+
+# c = connect(REDIS_URL)
+# r = rediscluster.RedisCluster(connection_pool=c)
 store = redis.Redis.from_url(REDIS_URL)
 print(store)
 redis_obj = {}
@@ -158,3 +165,9 @@ def lambda_handler(event, context):
 print(lambda_handler({},{}))
 
 
+#https://www.bseindia.com/download/BhavCopy/Equity/EQ120521_CSV.ZIP
+
+# username = default
+# password = rt04ubo8a2pvfcc7
+# host = bhav-data-do-user-9172163-0.b.db.ondigitalocean.com
+# port = 25061
