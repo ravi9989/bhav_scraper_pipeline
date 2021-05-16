@@ -132,7 +132,7 @@ def store_bhav_data(file_name, data):
 
         print("record---------->",record)
 
-        store.hmset(record['SC_CODE'], record)
+        store.hmset(str(record['SC_CODE']) + ":" + record['SC_NAME'], record)
    
 
     return True
